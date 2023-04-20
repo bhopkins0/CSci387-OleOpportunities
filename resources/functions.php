@@ -31,7 +31,7 @@ function adminAction($action)
 
 /*
  *
- * Grant Admin Privilegs (Admin Page)
+ * Grant Admin Privileges (Admin Page)
  *
  */
 
@@ -108,7 +108,6 @@ function displayAllComments()
 EOL;
         if ($i != $result->num_rows - 1)
             $displayedComments .= '<hr>';
-
     }
     return $displayedComments;
 
@@ -203,7 +202,6 @@ function displayUnapprovedListings()
         htmlspecialcharsArray($opportunityInfo);
         $opportunityType = strtoupper(getOpportunityTypeFromID($opportunityInfo["opp_type_ID"]));
         $opportunityTags = "";
-        $opportunityComments = "";
         $ratingStars = getRatingStars($opportunityInfo["opp_rating"]);
         if (getTagsOnOpportunity($opportunityInfo["opportunity_ID"])) {
             foreach ((array)getTagsOnOpportunity($opportunityInfo["opportunity_ID"]) as $tag) {
@@ -231,7 +229,6 @@ function displayUnapprovedListings()
 EOL;
         if ($i != $result->num_rows - 1)
             $unapprovedListings .= '<hr>';
-
     }
     return $unapprovedListings;
 
@@ -542,7 +539,7 @@ EOL;
     <main class="container mb-2">
     <div class="bg-body-tertiary p-5 rounded">
     <form method="POST">
-                            <div class="search">
+                            <div class="search mb-3">
                           <i class="fa fa-search"></i>
                           <input type="text" class="form-control" name="searchquery" placeholder="Search Listings">
                           <button class="btn btn-primary" type="submit">Search</button>
